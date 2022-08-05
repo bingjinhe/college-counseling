@@ -175,7 +175,14 @@
 
             <!-- About -->
             <article id="about">
-                <h2 class="major">College Application</h2>
+		    <div class="tab">
+                    <button class="tablinks active" onclick="openTab(event, 'tasks')">College Application</button>
+                    <button class="tablinks" onclick="openTab(event, 'team')">Team Strength</button>
+		    <button class="tablinks" onclick="openTab(event, 'admit')">matriculation</button>
+                    <button class="tablinks" onclick="openTab(event, 'feedback')">Feedbacks</button>
+                </div>
+
+                <div id="tasks" class="tabcontent" style="display: block;">
                 <p>My package includes the following items: <br /><br />
                     1. Recommend a couple research-oriented summer programs after 11th grade, try to correlate the
                     program with student interest and college major.
@@ -204,7 +211,8 @@
                     for a particular school or major.<br />
                     12. Prepare for interview content and rehearsal interview <br />
                     13. Advise off waiting list actions</p>
-
+	        </div>
+	        <div id="team" class="tabcontent">
                 <p>My college advising has the following strength:<br />
                     1. I have a very strong essay tutor team. These experienced tutors are selected over the past few
                     years who can extract out shining qualities from looks-plain student activities or life-experience, 
@@ -213,12 +221,37 @@
                     let students do this on their own. I have a set of strategies to
                     help students influence the content of their teacher recommendation letters, which directly
                     contribute to better chance of admission. The key is to prepare early。</p>
-
+		</div>
+		<div id="admit" class="tabcontent">    
                 <p> My students from recent years were admitted by the following colleges：<br />
                     Harvard, MIT, Stanford, Princeton, Yale, UPenn, Columbia, 
                     Cornell, Brown, Dartmouth，Duke, CMU CS，JHU，UChicago,
                     Vanderbilt, Wellesley, UCLA, Berkeley, NYU, Georgetown, 
                     Oxford in UK. <br />
+			
+	        </div>
+		   
+		<div id="feedback" class="tabcontent">
+	            <h3>Student Feedbacks</h3>
+                    <p>1. Having Bingjin as a counselor was a huge relief for me during the college application process. She works on an especially 
+			    personal level with her students—I can say with a hundred percent certainty that my essay is unique thanks to countless 
+			    brainstorming sessions with Bingjin. Because she has known me for multiple years, she was accepting of my out-of-the box 
+			    essay idea which other counselors might have cautioned me against. Bingjin never took over any of my decisions. 
+			    She simply pointed out multiple directions and helped me figure out which path was the best for me. Of course, 
+			    she also wasn’t afraid to tell me the hard truths I needed to hear. Although it was challenging at the time, Bingjin’s
+			    rigorous schedule and goal-oriented approach were invaluable to me. Bingjin helped me craft an application that captures 
+			    my true personality, motivations, and ambitions. <br/>
+			2. My Essay Tutor is very good at extracting ideas and stories from me, definitely helps my essay brainstorming.<br/>
+			</p>
+		    <h3>Parent Feedbacks</h3>
+                    <p>We noticed our daughter was struggling at the end of the summer of her junior year, when she was working with her college counselor for college application. She was one of the four team members from her high school that won the National Economics Challenge in her sophomore year.  She ranked high in national speech and debate rankings. She was a co-captain of her frisbee team. We picked one of the best college counselors for her. The founder of the company was frequently quoted for college admission by Wall Street Journal, USA today. Her counselor graduated from ivy league and worked as an admission officer at Brown. However our daughter was not happy. She even cried several times.
+I have known Bingjin for a long time: we worked together in a startup company, met multiple times at parties, and saw each other at kid’s piano recitals. Since her kids are all well rounded and attended top colleges, I contacted her to have lunch together with our daughter, thinking maybe she could give her some advice on how to work with her college counselor.
+At lunch, my daughter was relaxed and very open with Bingjin about her thoughts on her college application, issues with her counselor. I was happily surprised when Bingjin asked “How did you know that I am working as a college counselor? I am only working with a few friends’ kids this year”. At the parking lot after lunch, we finally saw our daughter’s smile coming back to her. It was no brainer. We switched to Bingjin for college counseling, and our daughter was admitted to Wharton early.
+Our second daughter was a STEM kid and very stubborn, like one of us. She ran into blockers when writing her main essay. We were not worried about it at all, because Bingjin had been following her for two years. She was admitted to Dartmouth this year.
+We are proud parents for two ivy league daughters and we know who we should say thank you to.<br/>
+			</p>	
+                </div>
+		    
             </article>
 
 		<article id="partner">
