@@ -1688,9 +1688,10 @@ input, select, textarea {
 	/* padding: 18px; */
 	width: 100%;
 	text-align: left;
-	/* border: none;
-	outline: none; */
+	border: none;
+	outline: none;
 	transition: 0.4s;
+	box-shadow: none;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -1702,6 +1703,21 @@ input, select, textarea {
   .accordian-panel {
 	/* padding: 0 18px; */
 	/* background-color: white; */
-	display: none;
+	/* display: none;
+	overflow: hidden; */
+	max-height: 0;
 	overflow: hidden;
+	transition: max-height 0.5s ease-out;
+  }
+
+  .accordion:after {
+	content: '\02795'; /* Unicode character for "plus" sign (+) */
+	/* font-size: 13px; */
+	color: #777;
+	float: right;
+	margin-left: 5px;
+  }
+  
+  .active:after {
+	content: "\2796"; /* Unicode character for "minus" sign (-) */
   }
