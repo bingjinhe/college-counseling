@@ -2,8 +2,8 @@
 
 ## Live URLs
 
-- GitHub Pages: `https://bingjinhe.github.io/college-counseling/`
-- Firebase Hosting: `https://college-counseling-1182b.web.app`
+- GitHub Pages: [https://bingjinhe.github.io/college-counseling/](https://bingjinhe.github.io/college-counseling/)
+- Firebase Hosting: [https://college-counseling-1182b.web.app](https://college-counseling-1182b.web.app)
 
 ## Firebase Hosting
 
