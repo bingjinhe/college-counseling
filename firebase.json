@@ -8,6 +8,8 @@
       ".firebaseignore",
       "**/.*",
       "**/node_modules/**",
+      "*service-account*.json",
+      "*firebase-adminsdk*.json",
       "college-counseling-1182b-*.json",
       "README.md",
       "README.txt",

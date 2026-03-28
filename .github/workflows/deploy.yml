@@ -73,6 +73,8 @@ jobs:
                 "firebase.json",
                 "**/.*",
                 "**/node_modules/**",
+                "*service-account*.json",
+                "*firebase-adminsdk*.json",
                 "college-counseling-1182b-*.json"
               ],
               "cleanUrls": true,
