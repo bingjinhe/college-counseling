@@ -80,4 +80,4 @@ Once that secret is added, pushing to `main` will deploy to both GitHub Pages an
 - `index-chinese.html` will be available at `/index-chinese`.
 - `index.php` is not needed on Firebase Hosting because the site is deployed as static files.
 - Repo-only files like `README.md`, `LICENSE.txt`, `composer.json`, `index.php`, and the Tencent verification text file are excluded from deploy.
-- A compatibility route exists at `index-chinese/index.html` so `/index-chinese/` works on both Firebase Hosting and GitHub Pages.
+- GitHub Actions generates a compatibility route at `index-chinese/index.html` during deploy so `/index-chinese/` works on GitHub Pages without duplicating the page in the repo.

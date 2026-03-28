@@ -21,7 +21,7 @@ jobs:
           cp Emma.jpeg site/
           cp -R assets site/
           cp -R images site/
-          cp index-chinese/index.html site/index-chinese/
+          cp index-chinese.html site/index-chinese/index.html
           touch site/.nojekyll
 
       - name: Upload GitHub Pages artifact
