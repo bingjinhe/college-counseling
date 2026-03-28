@@ -1,0 +1,95 @@
+name: Deploy Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Prepare static site bundle
+        run: |
+          mkdir -p site/index-chinese
+          cp index.html site/
+          cp index-chinese.html site/
+          cp Emma.jpeg site/
+          cp -R assets site/
+          cp -R images site/
+          cp index-chinese/index.html site/index-chinese/
+          touch site/.nojekyll
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Upload Firebase artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: firebase-site
+          path: site
+
+  deploy-github-pages:
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-firebase:
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Download prepared site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: firebase-site
+          path: site
+
+      - name: Write Firebase Hosting config for CI
+        run: |
+          cat > site/firebase.json <<'EOF'
+          {
+            "hosting": {
+              "public": ".",
+              "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+              ],
+              "cleanUrls": true,
+              "trailingSlash": false,
+              "rewrites": [
+                {
+                  "source": "/",
+                  "destination": "/index.html"
+                }
+              ]
+            }
+          }
+          EOF
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_COLLEGE_COUNSELING_1182B }}
+          projectId: college-counseling-1182b
+          channelId: live
+          entryPoint: site
