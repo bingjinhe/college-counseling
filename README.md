@@ -1,5 +1,10 @@
 # college-app-service
 
+## Live URLs
+
+- GitHub Pages: `https://bingjinhe.github.io/college-counseling/`
+- Firebase Hosting: `https://college-counseling-1182b.web.app`
+
 ## Firebase Hosting
 
 This site is configured for Firebase Hosting as a static site served from the repo root.
@@ -54,7 +59,18 @@ Add this repository secret in `Settings -> Secrets and variables -> Actions`:
 
 - `FIREBASE_SERVICE_ACCOUNT_COLLEGE_COUNSELING_1182B`
 
+Important:
+
+- Add it under `Repository secrets`, not under `Variables`
+- The name must match exactly: `FIREBASE_SERVICE_ACCOUNT_COLLEGE_COUNSELING_1182B`
+- The value must be the full JSON contents of the service account key, not a file path
+- Do not commit the JSON key file into the repo
+
 The value should be the full JSON credentials for a Firebase or Google Cloud service account that has permission to deploy Hosting for project `college-counseling-1182b`.
+
+If the secret is missing or named incorrectly, the GitHub Actions Firebase step fails with:
+
+`Input required and not supplied: firebaseServiceAccount`
 
 Once that secret is added, pushing to `main` will deploy to both GitHub Pages and Firebase Hosting.
 
