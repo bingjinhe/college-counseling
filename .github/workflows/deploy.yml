@@ -67,11 +67,13 @@ jobs:
           cat > site/firebase.json <<'EOF'
           {
             "hosting": {
+              "site": "bingjincounseling",
               "public": ".",
               "ignore": [
                 "firebase.json",
                 "**/.*",
-                "**/node_modules/**"
+                "**/node_modules/**",
+                "college-counseling-1182b-*.json"
               ],
               "cleanUrls": true,
               "trailingSlash": false,

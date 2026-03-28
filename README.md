@@ -3,7 +3,7 @@
 ## Live URLs
 
 - GitHub Pages: [https://ksun0.github.io/college-counseling/](https://ksun0.github.io/college-counseling/)
-- Firebase Hosting: [https://college-counseling-1182b.web.app](https://college-counseling-1182b.web.app)
+- Firebase Hosting: [https://bingjincounseling.web.app](https://bingjincounseling.web.app)
 
 ## Firebase Hosting
 
@@ -32,7 +32,8 @@ From this folder, run:
 
 This repo is currently configured for:
 
-- `college-counseling-1182b`
+- Firebase project id: `college-counseling-1182b`
+- Firebase Hosting site id: `bingjincounseling`
 
 After deploy, Firebase gives free default domains like:
 
